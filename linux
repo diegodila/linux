@@ -13,8 +13,6 @@ Existem três tipos de permissões para arquivos: ler, escrever e executar. Alé
 6 = ler e escrever
 7 = ler, escrever e executar
 
- 
-
 Permissões de arquivos mais usadas:
 
 chmod 604 [arquivo] (permissão mínima para arquivos HTML www)
@@ -35,8 +33,9 @@ chmod 703 [nomedodiretório] (permissão somente para escrita para FTP público 
        cp -r arq1 arq2 \ copia o arq1 para o arq2
  
 01
-rmdir -rf arquivo \ remove o que tem dentro forçando 
+rmdir -rf arquivo \ remove recursivamente forçando 
 
+------------------------------------------------------
 
 E-24-05-10
 CTRL+u clears from cursor to beginning of line
@@ -51,144 +50,11 @@ Esc+d clears one word to the right of the cursor
 
 Alt+left/right jumps to the beginning of the previous/next word
 
---------------------------------------------------------
-
-Listar programas:
-
-pacman -Qmq
-
-Copiar conteúdo para um arquivo .txt:
-
-pacman -Qmq > AUR.txt
-
-NOTA: Caso queira remover pacotes específicos, basta editar o arquivo.
-
-Remoção propriamente dita:
-
-pacman -Rscn $(cat AUR.txt)
-
---------------------------------------------------------------------------------
-E-01-07-20
-
-pamac upgrade -a  \ atualiza pacotes do aur 
-pamac update -a \ atualiza pacotes do aur 
-
-pamac –version \ version 
-pamac –help,-h [ação]
-pamac checkupdates [opções]
-pamac search [opções] <pacote(s)></pacote(s)>
-pamac info [opções] <pacote(s)></pacote(s)>
-pamac list [opções] <pacote(s)></pacote(s)>
-pamac install [opções] <pacote(s)></pacote(s)>
-pamac reinstall [opções] <pacote(s)></pacote(s)>
-pamac build [opções] <pacote(s)></pacote(s)>
-pamac remove [opções] <pacote(s)>
-pamac update,upgrade [opções] <pacote(s)></pacote(s)>
-
-pamac list -h \ helper
-Listar pacotes, grupos, repositórios ou arquivos.
-pamac list [opções]
--i, –installed : lista de pacotes instalados.
--o, –orphans : lista de pacotes que foram instalados como dependências, mas
-não são mais requeridos por nenhum pacote instalado.
--m, –foreign : lista de pacotes que não foram encontrados nos repositórios.
--g, –groups [grupo(s)] : listar todos os pacotes que são membros dos grupos fornecidos,
-se nenhum grupo é informado uma lista de todos os grupos.
--r, –repos [repo(s)] : listar todos os pacotes disponíveis no (s) repositório (s), se não houver o (s) repositório (s) pesquisado (s), é informado uma lista de todos osrepositórios existentes.
--f, –files [arquivo(s)] : lista de arquivos pertencentes aos pacotes fornecidos
-
-pamac checkupdates -h / helper 
-Verificar com segurança as atualizações sem modificar os bancos de dados.
-(O código de saída é 100 se houver atualizações disponíveis)
-pamac checkupdates [opções]
-Opções:
--a, –aur : também verificar atualizações em AUR
-
-pamac search -h \ helper 
-Procurar por pacotes ou arquivos, vários termos de pesquisa podem ser especificados.
-pamac search [opções] <pacote(s),arquivos(s)></pacote(s),arquivos(s)>
-Opções:
--a, –aur : pesquisa em AUR em vez de repositórios.
--f, –files : procure pacotes que possuam os nomes de arquivos fornecidos (nomes de arquivos podem ser parcial).
-Recusando-se a prestar serviço a pais mortos.
-
-pamac info -h \ helper
-Exibir detalhes do pacote, vários pacotes podem ser especificados
-pamac info [opções] <pacote(s)></pacote(s)>
-Opções:
--a, –aur : pesquisar no AUR em vez de repositórios
-
-pamac install -h \ helper
-Instalar pacotes de repositórios, caminho ou url.
-pamac install [opções] <pacote(s),grupo(s)></pacote(s),grupo(s)>
-Opções:
-–overwrite : sobrescrever arquivos conflitantes, vários padrões podem ser
-especificado separando-os com uma vírgula.
-Observação:
-O comando pamac install pacote pode ser utilizado para instalar pacotes que estão em seu desktop, assim substituindo o comando pacman -U pacote.
-
-pamac reinstall -h
-Reinstalar pacotes
-pamac reinstall <pacote(s),grupo(s)></pacote(s),grupo(s)>
-Recusando-se a prestar serviço a pais mortos.
-
-pamac build -h
-Construa pacotes do AUR e instale-os com suas dependências.
-pamac build [opções] <pacote(s)></pacote(s)>
-Opções:
-–builddir: criar diretório, se nenhum diretório é informado o especificado
-no arquivo pamac.conf é usado.
-
-pamac remove -h
-Remover pacotes.
-pamac remove [opções] [pacote(s),grupo(s)]
-Opções:
--o, –orphans : remover dependências que não são requeridas por outros pacotes, se
-opção é usada sem nome do pacote remove todos os órfãos.
-
-pamac upgrade -h
-Atualizar seu sistema.
-pamac upgrade,update [opções]
-Opções:
--a, –aur : também atualize os pacotes instalados a partir da AUR.
-–builddir: criar diretório (use com –aur), se nenhum diretório for
-informado o especificado no arquivo pamac.conf é usado.
-–force-refresh : forçar a atualização dos bancos de dados.
-–enable-downgrade : habilitar downgrades de pacotes.
-–ignore [pacote(s)] : ignorar uma atualização de pacote, vários pacotes podem ser
-especificado separando-os com uma vírgula.
-–overwrite : sobrescrever arquivos conflitantes, vários padrões podem ser
-especificado separando-os com uma vírgula.
-
-pamac update -h
-Atualizar seu sistema.
-pamac upgrade,update [opções]
-Opções:
--a, –aur : também atualize os pacotes instalados a partir da AUR.
-–builddir: criar diretório (use com –aur), se nenhum diretório for
-informado o especificado no arquivo pamac.conf é usado.
-–force-refresh : forçar a atualização dos bancos de dados.
-–enable-downgrade : habilitar downgrades de pacotes.
-–ignore [pacote(s)] : ignorar uma atualização de pacote, vários pacotes podem ser
-especificado separando-os com uma vírgula.
-–overwrite : sobrescrever arquivos conflitantes, vários padrões podem ser
-especificado separando-os com uma vírgula.
-
------------------------------------
-
-> sudo tar xvzf jdk-14.0.2_linux-x64_bin.tar.gz -C /opt
-> ls /opt 
-> echo -e 'export JAVA_HOME="/opt/jdk-14.0.2"\nexport PATH="$PATH:${JAVA_HOME}/bin"\n' | sudo tee /etc/profile.d/jdk14.sh
-> echo $JAVA_HOME && echo $PATH
-> java -version
-
------------------------------------
+------------------------------------------------------
 
 #automatizar a escrita na criação de scripts
 sudo bash -c 'echo "hello" > f.txt'
 echo "hello" | sudo tee f.txt  # add -a for append (>>)
 
---------------------------------------
-pacman -Qe #packages installed for me
 
 

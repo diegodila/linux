@@ -1,0 +1,11 @@
+Listar programas:
+
+pacman -Qmq
+
+Copiar conteúdo para um arquivo .txt:
+pacman -Qmq > AUR.txt
+NOTA: Caso queira remover pacotes específicos, basta editar o arquivo.
+Remoção propriamente dita:
+pacman -Rscn $(cat AUR.txt)
+
+pacman -Qe #packages installed for me
