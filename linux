@@ -232,4 +232,11 @@ Alt+left/right jumps to the beginning of the previous/next word
 sudo bash -c 'echo "hello" > f.txt'
 echo "hello" | sudo tee f.txt  # add -a for append (>>)
 
+#quem sou eu 
+whoami
+
+#mudar de usuario, somente su vai para o padrão root
+su
+
+
 
