@@ -238,5 +238,9 @@ whoami
 #mudar de usuario, somente su vai para o padrão root
 su
 
+#mudando o owner e dos subdiretorios
+sudo chown diegodila -R Projects
+chown -R vinicius /mp3
+
 
 
