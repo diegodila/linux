@@ -242,5 +242,98 @@ su
 sudo chown diegodila -R Projects
 chown -R vinicius /mp3
 
+#mudando de usuário
+su [nome-do-usuario-que-deseja-mudar]
 
+#quem sou eu 
+whoami
 
+#adiciona o usuário “diegodila” ao grupo de usuários sudo,
+usermod -aG sudo diegodila
+
+#ver grupo sudo
+cat /etc/sudoers
+
+#trocando a senha do superusuario
+sudo passwd root
+#trocando a senha de usuario
+sudo passwd usuario
+
+#criando um usuario, -d o diretorio pessoal do usuario, -p senha
+sudo useradd fiap -d /home/fiap -p _senha_usuario_fiap
+
+#criando um grupo de users
+sudo groupadd fiapon
+
+#configurações de usuarios
+/etc/passwd
+
+#senhas de usuarios
+/etc/shadow
+
+#configurações de grupos
+/etc/group
+
+Embora seja possível alterar os arquivos /etc/passwd (configurações do usuário), /etc/shadow (as senhas dos usuários) e /etc/group (configurações de grupo) com os privilégios de um root, a prática não é recomendada, pois qualquer falha na alteração destes arquivos pode comprometer o acesso dos usuários ao sistema.
+
+Sendo assim, o comando usermod (de user modification ou modificação de usuário) e os parâmetros "-aG" são geralmente usados em conjunto e permitem adicionar o usuário em novos grupos sem, no entanto, retirá-lo dos grupos dos quais já faz parte.
+
+O parâmetro "-d" permite estabelecer um novo diretório pessoal para o usuário, "-L" (de lock) bloqueia um usuário, enquanto "-U" (de unlock) pode desbloqueá-lo facilmente. O uso de "-e" permite estabelecer uma data de expiração para a conta do usuário, que é automaticamente bloqueada após esta data.
+
+------------------------------------------------------
+#É o diretório dos binários no Linux. Os comandos que podem ser executados de alguma forma por qualquer usuário ficam por aqui.
+/bin
+
+#Armazena os arquivos necessários para realizar o boot do sistema Linux.
+/boot
+
+#"dev" é uma abreviação da palavra inglesa devices, ou dispositivos; diferente do Windows que possuímos uma lista de dispositivos como esta: em sistemas *nix, os dispositivos viram arquivos, fazendo parte do sistema de arquivos. Sendo assim, periféricos, como mouses, impressoras, webcams, e dispositivos embarcados, como HDs e suas partições, tudo vira um arquivo em /dev.
+/dev
+
+#Os arquivos de configuração ficam aqui, especialmente os de serviços da máquina; quando a configuração é específica para um determinado usuário, geralmente ficam em pastas ocultas (iniciadas com ".", ponto) no diretório do usuário.
+/etc
+
+#Armazena os diretórios de usuários, sendo equivalente ao C:\Usuários ou C:\Users. Cada usuário possui seu próprio diretório (Por exemplo, meu usuário "hpoyatos" possui o /home/hpoyatos).
+/home
+
+#Equivalente ao C:\Windows\System e C:\Windows\System32, são os diretórios onde ficam as bibliotecas de sistema; as bibliotecas em 64bits ficam em /lib64, enquanto as de 32bits ficam em /lib.
+/lib e /lib64
+
+#Diretório de "achados e perdidos" do sistema. Em uma eventual falha no sistema de arquivos, o comando fsck deve ser utilizado e, caso ache arquivos ou fragmentos dele que ele não sabe onde guardar, eles ficam armazenados por aqui
+/lost+found
+
+#Diretórios de "montagem" de volumes, como pendrives, CD-ROMs e DVD-ROMs.
+/media e mnt
+
+#Diretório opcional, pode ser utilizado como diretório alternativo de instalação de programas.
+/opt
+
+#Diretório virtual de informações do sistema; através de seus pseudo arquivos, podemos obter informações sobre o processador, uso de memória, entre outros.
+/proc
+
+#Diretório pessoal do superusuário ou root.
+/root
+
+#Os processos em andamento (rodando ou run) geram arquivos .pid que ficam armazenados por aqui.
+/run
+
+#Os binários (comandos) específicos para uso do superusuário (root) ficam armazenados aqui.
+/sbin
+
+#Dados de serviços em execução ficam armazenados neste diretório.
+/srv
+
+#(apenas para kernels 2.6.x ou superiores) armazena os módulos para equipamentos USB.
+/sys
+
+#Diretório de arquivos temporários, que podem ser gerados por serviços ativos; é equivalente ao C:\Windows\Temp.
+/temp
+
+#É aqui que os programas são instalados, assim sendo, seria equivalente ao C:\Arquivos de programas ou C:\Program Files.
+/usr
+
+#O diretório var armazena informações de tamanhos variados; é nele, por exemplo, que os arquivos que armazenam dados em um banco de dados ficam.
+/var
+
+#Como também é uma informação de tamanho variado, os logs de sistema ficam neste subdiretório.
+/var/log
