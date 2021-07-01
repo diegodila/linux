@@ -337,3 +337,116 @@ O parâmetro "-d" permite estabelecer um novo diretório pessoal para o usuário
 
 #Como também é uma informação de tamanho variado, os logs de sistema ficam neste subdiretório.
 /var/log
+
+------------------------------------------------------
+
+#lista arquivos e diretorios, l lista detalhada de info, -a vem do all, todos arquivos e diretorios, ate os ocultos
+ls -la
+
+#mostrando em giga, -h legivel para humanos
+ls -lah
+
+#print work directory
+pwd
+
+#change directory
+cd
+
+#make a directory
+mkdir
+
+#permissão para criar com caracter especial, precedido \
+mkdir Nova\ Pasta
+
+#Criando subdirectory
+mkdir -p Nova Pasta2/subpasta/subsubpasta
+mkdir -p teste1/{teste2,teste3}
+
+#to remove
+rm /home/teste/arquivo
+
+#recursivo porem com pergunta, o que seria se tivesse 30?
+rm -r [diretorio/oquetemladentro]
+
+#recursivo sem perguntar, -rf force
+rm -rf /home/diegodila/Nova Pasta2
+
+#copy, importante que tenha permissão de escrita no diretorio destino
+cp /home/diegodila/Arquivo2.txt $HOME/teste
+
+#copiando um diretorio, -R recursividade, -v verbose, -p preserva os privilegios desse diretorio
+cp -Rvp /home/diegodila/[diretorio] $HOME/ 
+
+#to move, moving img to opt
+mv /tmp/img /opt
+
+#mudando o nome do arquivo
+mv /tmp/Arquivo2.txt /tmp/Arquivo1.txt
+
+#exibir o conteudo de um arquivo texto
+cat /home/arqu.txt
+
+#exibi o conteudo do arquivo no terminal
+cat database/01/cria_tabelas.sql
+
+#10 primeiras linhas do conteudo, -n numero de linhas 
+head -n 10 database/01/cria_tabelas.sql
+
+#o inverso do head, tail(cauda), -n numero de linhas, tail é usado para logs grandes
+tail -n 10 database/01/cria_tabelas.sql
+
+#outra forma de leitura
+less database/01/cria_tabelas.sql
+
+#localiza arquivos 
+locate google-chrome
+
+#localiza termos dentro de arquivos, palavras chaves,basta digitar a palavra-chave logo após o comando, seguido do local que se deseja procurar
+grep Populating\ JOB_HISTORY database/01/cria_tabelas.sql 
+
+#procurando com caracteres especiais
+grep Prompt\ \*\*\*\*\*\* database/01/cria_tabelas.sql
+
+#procurando termos dentro de diretorios, -r recursividade
+grep Prompt\ \*\*\*\*\*\* database/ -r 
+grep Prompt database/ -r
+
+#descompactar arquivos zip, -v listar cada arquivo e diretorio que ele está descompactando. sem o prompt é silencioso
+unzip -v arquivoZipado.zip
+
+#-t testar o arquivo antes de descompacta-lo, testando a integridade dos arquivos, sem descompactar
+unzip -tv arquivoZipado.zip
+
+#comprimindo e empacotando os arquivos, tar. -c create, z gzip, -v verbose, -f o nome do arquivo que irei gerar
+tar -czvf exemplo1.tgz *
+tar -czvf exemplo2.tgz *.txt
+
+#-j no lugar do -z usará o compactador bzip2, bzip2 compacta melhor
+tar -cjvf exemplo2.tgz *.txt
+
+#extraindo o arquivo
+tar -xzvf exemplo2.tar.gz
+
+#extraindo o arquivo e testando
+tar -tzvf exemplo2.tar.gz
+
+#ifconfig gerenciando uma interface de rede
+ifconfig
+
+#ligando e desligando a interface de rede
+sudo ifconfig lo up | down 
+
+#ligando e desligando 
+sudo ifconfig [nome da interface] down | up permite ligar e desligar a interface de rede facilmente.
+
+#trocando a mask e o ip, colocamos o ip desejado a palavra netmask e mascara de subrede
+sudo ifconfig lo 172.16.0.1 netmask 255.255.0.0
+
+#route, visualizar as rotas existentes ou mesmo a criação de novas rotas, ele tambem mostra as rotas estabelecidas
+route
+
+#criar uma rota especifica, usamos o parametro add seguido do -net, com endereço de rede na sequencia, seguido pela mask
+sudo route add -net 192.36.73.0 netmask 251.251.251.0 dev enp0s3
+
+#adicionando um gateway padrão 
+sudo route add default gw 10.0.2.1
