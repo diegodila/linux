@@ -1,0 +1,62 @@
+uname -a 
+exibe informações do kernel
+
+speedtest-cli
+velocidade da internet
+
+free -m 
+exibe o uso da memoria e swap
+
+htop
+-------------------------------
+df -h 
+exibe espaço do disco 
+
+du
+exibe o espaço do uso em diretorio
+
+touch arq
+cria um arquivo
+
+mv arq1 arq2
+usado para renomear ou mover
+
+rm arq1
+remove o arquivo
+
+cp -r arq1 arq2
+copia o arq1 para o arq2
+
+rmdir -rf arquivo
+remove recursivamente forçando 
+
+more words arquivo
+exibe o conteudo de um arquivo
+
+cat arquivo.txt
+exibe o conteudo de um arquivo
+
+--------------------
+whoami
+quem sou eu
+
+sudo whoami
+sou sudo?
+
+su diegodila
+mudando de usuario para diegodila
+
+sudo passwd root 
+trocando a senha do superusuario
+
+sudo passwd usuario
+trocando a senha de usuario
+
+sudo chown diegodila -R Projects
+mudando o owner dos diretorios e subdiretorios
+
+usermod -aG sudo diegodila
+adiciona o usuário “diegodila” ao grupo de usuários sudo
+
+cat /etc/sudoers
+ver grupo sudo

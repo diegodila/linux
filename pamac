@@ -83,7 +83,7 @@ Opções:
 -a, –aur : também atualize os pacotes instalados a partir da AUR.
 –builddir: criar diretório (use com –aur), se nenhum diretório for
 informado o especificado no arquivo pamac.conf é usado.
-–force-refresh : forçar a atualização dos bancos de dados.
+– force-refresh : forçar a atualização dos bancos de dados.
 –enable-downgrade : habilitar downgrades de pacotes.
 –ignore [pacote(s)] : ignorar uma atualização de pacote, vários pacotes podem ser
 especificado separando-os com uma vírgula.

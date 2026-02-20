@@ -1,0 +1,18 @@
+Existem três tipos de permissões para arquivos: ler, escrever e executar. Além disso, você pode definir permissões em três níveis: para o dono do arquivo, para o grupo de usuários e para todo mundo. O comando chmod seguido por três números é usado para mudar as permissões. O primeiro é a permissão para o dono, o segundo para o grupo e o terceiro para todos. Veja a seguir como os níveis de permissão são representados:
+
+0 = sem permissão
+1 = somente executar
+2 = somente escrever
+3 = escrever e executar
+4 = somente leitura
+5 = leitura e executar
+6 = ler e escrever
+7 = ler, escrever e executar
+
+Permissões de arquivos mais usadas:
+
+chmod 604 [arquivo] (permissão mínima para arquivos HTML www)
+chmod 705 [nomedodiretório] (permissão mínima para diretórios www)
+chmod 755 [arquivo] (permissão mínima para scripts & programas www)
+chmod 606 [arquivo] (permissão para arquivos de dados usados por scripts)
+chmod 703 [nomedodiretório] (permissão somente para escrita para FTP público para carregar arquivos)

@@ -172,46 +172,7 @@ Ctrl + A move você para o início da linha enquanto Ctrl + E move você para o 
 
 Você pode executar vários comandos em um único comando usando o “;” para separá-los. Por exemplo, command1, command2, command3. Ou use && se desejar que o próximo comando seja executado apenas quando o primeiro comando indicado estiver funcionando.
 
-------------------------------------------------------
 
-linux 
-htop - processos
-ps aux 
-
-Existem três tipos de permissões para arquivos: ler, escrever e executar. Além disso, você pode definir permissões em três níveis: para o dono do arquivo, para o grupo de usuários e para todo mundo. O comando chmod seguido por três números é usado para mudar as permissões. O primeiro é a permissão para o dono, o segundo para o grupo e o terceiro para todos. Veja a seguir como os níveis de permissão são representados:
-
-0 = sem permissão
-1 = somente executar
-2 = somente escrever
-3 = escrever e executar
-4 = somente leitura
-5 = leitura e executar
-6 = ler e escrever
-7 = ler, escrever e executar
-
-Permissões de arquivos mais usadas:
-
-chmod 604 [arquivo] (permissão mínima para arquivos HTML www)
-chmod 705 [nomedodiretório] (permissão mínima para diretórios www)
-chmod 755 [arquivo] (permissão mínima para scripts & programas www)
-chmod 606 [arquivo] (permissão para arquivos de dados usados por scripts)
-chmod 703 [nomedodiretório] (permissão somente para escrita para FTP público para carregar arquivos)
-
-  183  more words \ exibe o conteudo de um arquivo
-  184  df -h \ exibe espaço do disco 
-  185  du \ exibe o espaço do uso em diretorio
-  186  free -m \ exibe o uso da memoria e swap
-  187  uname -a \ exibe informações do kernel
-  188  uptime \ exibe tempo de atividade do sistema 
-       touch arq \ cria um arquivo
-       mv arq1 arq2 \ usado para renomear ou mover
-       rm arquivo1 \ remove o arquivo
-       cp -r arq1 arq2 \ copia o arq1 para o arq2
- 
-01
-rmdir -rf arquivo \ remove recursivamente forçando 
-
-------------------------------------------------------
 
 E-24-05-10
 CTRL+u clears from cursor to beginning of line
@@ -232,32 +193,6 @@ Alt+left/right jumps to the beginning of the previous/next word
 sudo bash -c 'echo "hello" > f.txt'
 echo "hello" | sudo tee f.txt  # add -a for append (>>)
 
-#quem sou eu 
-whoami
-
-#mudar de usuario, somente su vai para o padrão root
-su
-
-#mudando o owner e dos subdiretorios
-sudo chown diegodila -R Projects
-chown -R vinicius /mp3
-
-#mudando de usuário
-su [nome-do-usuario-que-deseja-mudar]
-
-#quem sou eu 
-whoami
-
-#adiciona o usuário “diegodila” ao grupo de usuários sudo,
-usermod -aG sudo diegodila
-
-#ver grupo sudo
-cat /etc/sudoers
-
-#trocando a senha do superusuario
-sudo passwd root
-#trocando a senha de usuario
-sudo passwd usuario
 
 #criando um usuario, -d o diretorio pessoal do usuario, -p senha
 sudo useradd fiap -d /home/fiap -p _senha_usuario_fiap
